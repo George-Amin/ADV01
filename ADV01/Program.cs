@@ -1,4 +1,5 @@
 ﻿using ADV01.EX01;
+using ADV01.EX02V2;
 using System.ComponentModel.Design;
 
 namespace ADV01
@@ -70,6 +71,41 @@ namespace ADV01
             //Console.WriteLine(num.GetHashCode());
             #endregion
 
+            #endregion
+
+            #region Searching value
+
+            //int[] arr = null;
+            //int num = 300;
+            //Console.WriteLine(Search.SearchValue(arr, num));
+
+            //TwoPoints[] points =
+            //{
+            //    new TwoPoints (1,2),
+            //    new TwoPoints (10,20),
+            //    new TwoPoints (100,200),
+            //};
+            //TwoPoints val = new TwoPoints(10, 20);
+            //int index = Search.SearchValue(points, val);
+
+
+            Employee emp1 = new Employee(1, "Mina", 5000m);
+            //Employee emp2 = new Employee(2, "George", 5111m);
+            Employee emp3 = new Employee(1, "Mina", 5000m);
+            //Employee emp3 = new Employee(3, "Youssef", 5111m);
+            int x = emp1.GetHashCode();
+            int v = emp3.GetHashCode();
+
+            Console.WriteLine(  x);
+            Console.WriteLine(  v);
+            if ( emp1 == emp3) // by default it compare the reference not the content with  classes 
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
             #endregion
 
         }
