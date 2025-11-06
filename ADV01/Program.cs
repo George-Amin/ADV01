@@ -89,23 +89,42 @@ namespace ADV01
             //int index = Search.SearchValue(points, val);
 
 
-            Employee emp1 = new Employee(1, "Mina", 5000m);
+            //Employee emp1 = new Employee(1, null, 5000m);
             //Employee emp2 = new Employee(2, "George", 5111m);
-            Employee emp3 = new Employee(1, "Mina", 5000m);
+            //Employee emp3 = new Employee(1, "Mina", 5000m);
             //Employee emp3 = new Employee(3, "Youssef", 5111m);
-            int x = emp1.GetHashCode();
-            int v = emp3.GetHashCode();
+            //emp3 = emp1; // now both emp1 and emp3 refer to the same object in memory
+            //int x = emp1.GetHashCode();
+            //int v = emp3.GetHashCode();
+            ////int v = emp3.GetHashCode();
 
-            Console.WriteLine(  x);
-            Console.WriteLine(  v);
-            if ( emp1 == emp3) // by default it compare the reference not the content with  classes 
+            //Console.WriteLine(x);
+            //Console.WriteLine(v);
+            //if (emp1 == emp3) // by default it compare the reference not the content with  classes 
+            //// if you want to compare the content you have to overload the == operator in struct
+            //{
+            //    Console.WriteLine("Yes");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No");
+            //}
+
+            Employee[] arrOfEmp = new Employee[]
             {
-                Console.WriteLine("Yes");
-            }
-            else
-            {
-                Console.WriteLine("No");
-            }
+                new Employee(1, "Mina", 5000m),
+                new Employee(2, "George", 6000m),
+                new Employee(3, "Youssef", 7000m),
+                new Employee(4, "Amin", 8000m),
+                new Employee(5, "Shokry", 9000m),
+                new Employee(6, "jo", 5400m),
+                new Employee(7, "do", 6600m),
+
+            };
+            Employee employee = new(4, "Amin", 8000m);
+            //Search<Employee>.SearchValue(new Employee[] { emp2, emp3 }, emp2);
+            int i = Search<Employee>.SearchValue(arrOfEmp, employee);
+            Console.WriteLine(i);
             #endregion
 
         }
