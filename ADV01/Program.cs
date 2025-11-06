@@ -110,22 +110,39 @@ namespace ADV01
             //    Console.WriteLine("No");
             //}
 
-            Employee[] arrOfEmp = new Employee[]
-            {
-                new Employee(1, "Mina", 5000m),
-                new Employee(2, "George", 6000m),
-                new Employee(3, "Youssef", 7000m),
-                new Employee(4, "Amin", 8000m),
-                new Employee(5, "Shokry", 9000m),
-                new Employee(6, "jo", 5400m),
-                new Employee(7, "do", 6600m),
+            //Employee[] arrOfEmp = new Employee[]
+            //{
+            //    new Employee(1, "Mina", 5000m),
+            //    new Employee(2, "George", 6000m),
+            //    new Employee(3, "Youssef", 7000m),
+            //    new Employee(4, "Amin", 8000m),
+            //    new Employee(5, "Shokry", 9000m),
+            //    new Employee(6, "jo", 5400m),
+            //    new Employee(7, "do", 6600m),
 
-            };
-            Employee employee = new(4, "Amin", 8000m);
-            //Search<Employee>.SearchValue(new Employee[] { emp2, emp3 }, emp2);
-            int i = Search<Employee>.SearchValue(arrOfEmp, employee);
-            Console.WriteLine(i);
+            //};
+            //Employee employee = new(4, "Amin", 8000m);
+            ////Search<Employee>.SearchValue(new Employee[] { emp2, emp3 }, emp2);
+            //int i = Search<Employee>.SearchValue(arrOfEmp, employee);
+            //Console.WriteLine(i);
             #endregion
+
+
+
+            #region V3 Equality And hash Code GetHashCode()
+
+            //---  code for V3 Equality And hash Code GetHashCode() goes here ---//
+            Employee emp1 = new Employee(10, "george", 5000m);   
+            Employee emp2 = new Employee(10, "george", 5000m);
+            Console.WriteLine(emp1.GetHashCode());
+            Console.WriteLine(emp2.GetHashCode());
+
+
+            string Message = emp1.Equals(emp2) ? "Equal" : "Not Equal";// Using Equals method to compare the content of the two objects
+           // 
+            Console.WriteLine(Message); // Output: not Equal
+            #endregion
+
 
         }
     }
