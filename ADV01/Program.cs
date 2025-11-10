@@ -1,6 +1,7 @@
 ﻿using ADV01.EX01;
 using ADV01.EX02V2;
 using System.ComponentModel.Design;
+using System.Security.Cryptography;
 
 namespace ADV01
 {
@@ -131,16 +132,29 @@ namespace ADV01
 
             #region V3 Equality And hash Code GetHashCode()
 
-            //---  code for V3 Equality And hash Code GetHashCode() goes here ---//
-            Employee emp1 = new Employee(10, "george", 5000m);   
-            Employee emp2 = new Employee(10, "george", 5000m);
-            Console.WriteLine(emp1.GetHashCode());
-            Console.WriteLine(emp2.GetHashCode());
+            // //---  code for V3 Equality And hash Code GetHashCode() goes here ---//
+            // Employee emp1 = new Employee(10, "george", 5000m);   
+            // Employee emp2 = new Employee(10, "george", 5000m);
+            // Console.WriteLine(emp1.GetHashCode());
+            // Console.WriteLine(emp2.GetHashCode());
 
 
-            string Message = emp1.Equals(emp2) ? "Equal" : "Not Equal";// Using Equals method to compare the content of the two objects
-           // 
-            Console.WriteLine(Message); // Output: not Equal
+            // string Message = emp1.Equals(emp2) ? "Equal" : "Not Equal";// Using Equals method to compare the content of the two objects
+            //// 
+            // Console.WriteLine(Message); // Output: not Equal
+            #endregion
+
+
+
+            #region Is - As - typeof()
+            #region Is Operator
+            Employee emp0 = new Employee(1, "George", 5000m);
+            Employee? emp01 = null;
+            Employee emp02 = new Employee(2, "Mina", 6000m);
+            Employee emp03 = new Employee(2, "Mina", 6000m);
+            // Console.WriteLine(emp01?.Equals(emp0)); // this will throw NullReferenceException because emp01 is null this is the caller can be null use null conditional operator [?.]
+            Console.WriteLine(emp02.Equals(emp03));
+            #endregion
             #endregion
 
 
