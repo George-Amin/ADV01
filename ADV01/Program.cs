@@ -1,5 +1,6 @@
 ﻿using ADV01.EX01;
 using ADV01.EX02V2;
+using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Security.Cryptography;
 
@@ -148,15 +149,199 @@ namespace ADV01
 
             #region Is - As - typeof()
             #region Is Operator
-            Employee emp0 = new Employee(1, "George", 5000m);
-            Employee? emp01 = null;
-            Employee emp02 = new Employee(2, "Mina", 6000m);
-            Employee emp03 = new Employee(2, "Mina", 6000m);
-            // Console.WriteLine(emp01?.Equals(emp0)); // this will throw NullReferenceException because emp01 is null this is the caller can be null use null conditional operator [?.]
-            Console.WriteLine(emp02.Equals(emp03));
-            #endregion
+            //Employee emp0 = new Employee(1, "George", 5000m);
+            //Employee? emp01 = null;
+            //Employee emp02 = new Employee(2, "Mina", 6000m);
+            //Employee emp03 = new Employee(2, "Mina", 6000m);
+            //// Console.WriteLine(emp01?.Equals(emp0)); // this will throw NullReferenceException because emp01 is null this is the caller can be null use null conditional operator [?.]
+            //Console.WriteLine(emp02.Equals(emp03));
             #endregion
 
+            #region As Operator Use To Safe Casting
+            /* casting 
+            //int x = 100;
+            //string y = "123";
+            // int z = (int)y; // invalid cast Exception
+            //object obj1 = y; // boxing
+            //x = int.Parse(y);
+            //int? z = (int)obj1;
+
+            //Console.WriteLine(x);
+            //Console.WriteLine(x.GetType());
+            //object obj2 = y; // boxing
+            //int? z = obj2 as int?; // unboxing using as operator
+
+            */
+            /*//int.TryParse() is a method, not a cast, used specifically for converting a string to an int safely.
+
+              int number;
+              bool isPathed;
+              do
+              {
+                  Console.Write("Enter Number : ");
+                  string? input = Console.ReadLine();
+                  isPathed = int.TryParse(input, out number);
+                  if (!isPathed)
+                  {
+                      Console.WriteLine("Invalid input. Please enter a valid integer.");
+                  }
+
+              }
+              while (!isPathed);
+              Console.WriteLine(number);
+              Console.WriteLine(number.GetType());
+            */
+
+
+            // Casting obj to Employee using as operator
+
+            #region EX Search If Employee Input Is existing
+            /*
+                        Employee emp1 = new Employee(1, "a", 1m);
+                        Employee emp2 = new Employee(2, "b", 2m);
+                        Employee emp3 = new Employee(3, "c", 3m);
+                        Employee emp4 = new Employee(4, "d", 4m);
+
+                        Employee[] employees = new Employee[] { emp1, emp2, emp3, emp4 };
+
+
+                        bool isExisting = true;
+
+                        bool breakLoop = false;
+
+                        Console.WriteLine("Enter Employee To Search : ");
+                        Console.Write("Enter Id : ");
+                        int id = int.Parse(Console.ReadLine());
+                        Console.Write("Enter Name : ");
+                        string? name = Console.ReadLine();
+                        Console.Write("Enter Salary: ");
+                        decimal salary = decimal.Parse(Console.ReadLine());
+                        Employee InputEmp = new Employee
+                        (
+                             _id: id,
+                            _name: name,
+                             _salary: salary
+                        );
+                        do
+                        {
+                            for (int i = 0; i < employees.Length; i++)
+                            {
+                                bool x = InputEmp.Equals(employees[i]);
+
+                                if (x)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine("Employee Is Existing in the database!");
+                                    Console.ResetColor();
+
+                                }
+
+                                if (!x)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Employee Is not Existing in the database!");
+                                    Console.ResetColor();
+                                }
+                                break;
+
+
+                            }
+                        } while (isExisting is false);
+
+
+                        Console.WriteLine("done");
+            */
+
+            #endregion
+
+            #endregion
+
+
+            #endregion
+
+
+
+            //static void Swip(ref string _x, ref string _y)
+            //{
+            //    string Temp = _x;
+            //    _x = _y;
+            //    _y = Temp;
+
+            //}
+
+            string? name = "ppla";
+
+            string? chars = "lpap";
+
+            int indexI;
+            int indexJ;
+            bool found;
+            Console.WriteLine("-----------");
+            int temp;
+
+            /*
+            // var ref1 = name[0].GetHashCode(); //-2008461520
+            // var ref2 = chars[0].GetHashCode();
+            // Console.WriteLine(ref1);
+            // Console.WriteLine(ref2);
+            //var temp = name[0].GetHashCode();
+            //Console.WriteLine(temp);
+            //var temp2 = chars[0].GetHashCode();
+            //Console.WriteLine(temp2);
+
+            ////ref1 = ref2;
+            //ref2 = temp;
+
+            // Console.WriteLine(ref1);
+            //Console.WriteLine(ref2);
+            //Console.WriteLine(name[0]);
+            //Console.WriteLine(chars[0]);
+            //Console.WriteLine(name.GetHashCode());//-2008461520
+            //Console.WriteLine(ref1);
+            //Console.WriteLine(name[0].GetHashCode());
+
+            Console.WriteLine("----------------------");
+            */
+            for (int i = 0; i < name.Length; i++)
+            {
+            int refNameCodes = name[0].GetHashCode();
+
+            }
+
+            for (int j = 0; j < chars.Length; j++)
+            {
+            int refCharsCodes = chars[0].GetHashCode();
+
+            temp = refNameCodes;
+            refNameCodes = temp;
+            refCharsCodes = temp;
+            }
+            //if ()
+            //{
+
+            //}
+
+            //if (name[i].ToString() == chars[j])
+            //{
+            //    Swip(ref chars[i], ref chars[j]);
+            //    //Console.Write(chars[i]);
+            //    break;
+            //}
+
+
+            //int[] numbers = { 1, 2, 3, 4, 5, 5 };
+            //Dictionary<int, int> sol = new Dictionary<int, int>();
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    int current = numbers[i];
+
+
+
+            //}
+            //foreach (int count in sol.Values)
+            //{
+            //    Console.WriteLine(count);
+            //}
 
         }
     }
