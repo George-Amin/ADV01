@@ -60,7 +60,7 @@ namespace ADV01.EX02V2
 
             #region Is Operator -- Safe Casting
             // example of safe type casting
-            // using is operator to check type before casting and can cast inside (Optional with pattern matching) object to Employee
+            // using [ is ] operator to check type before casting and can cast inside (Optional with pattern matching) object to Employee
             /* return  
              
 
@@ -87,7 +87,7 @@ namespace ADV01.EX02V2
 
             #region As Operator 
             // example of safe type casting 
-
+            // use [ as ] operator to cast object to Employee if fail return null
             Employee? emp = _obj as Employee; // safe type casting if fail return null
             if (emp is not null)
             {

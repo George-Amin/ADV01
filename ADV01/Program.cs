@@ -149,6 +149,8 @@ namespace ADV01
 
             #region Is - As - typeof()
             #region Is Operator
+            // ---  code for Is Operator goes here ---//
+
             //Employee emp0 = new Employee(1, "George", 5000m);
             //Employee? emp01 = null;
             //Employee emp02 = new Employee(2, "Mina", 6000m);
@@ -158,6 +160,8 @@ namespace ADV01
             #endregion
 
             #region As Operator Use To Safe Casting
+
+
             /* casting 
             //int x = 100;
             //string y = "123";
@@ -172,6 +176,24 @@ namespace ADV01
             //int? z = obj2 as int?; // unboxing using as operator
 
             */
+
+            #region As 
+            // default value of reference type is null not thorw exceptions
+            //object myObject = "Hello World"; // myObject holds a string
+            //string myString = myObject as string; // Success: myString is "Hello World"
+            //Console.WriteLine(myObject);
+            //Console.WriteLine(myString);
+
+
+            //object anotherObject = 123; // anotherObject holds an integer
+            //string anotherString = anotherObject as string; // Failure: anotherString is null
+            //Console.WriteLine("================");
+            //Console.WriteLine(anotherObject);
+            ////Console.WriteLine(anotherString.GetType()); // This line would throw a NullReferenceException
+
+            #endregion
+
+
             /*//int.TryParse() is a method, not a cast, used specifically for converting a string to an int safely.
 
               int number;
@@ -254,95 +276,19 @@ namespace ADV01
 
             #endregion
 
-            #endregion
+
+            //Employee emp01 = new Employee(1, "George", 5000m);
+            //Employee Test  = null;
+            //Console.WriteLine(emp01.Equals(Test)); // no exception thrown just return false
 
 
             #endregion
 
 
+            #endregion
 
-            //static void Swip(ref string _x, ref string _y)
-            //{
-            //    string Temp = _x;
-            //    _x = _y;
-            //    _y = Temp;
-
-            //}
-
-            string? name = "ppla";
-
-            string? chars = "lpap";
-
-            int indexI;
-            int indexJ;
-            bool found;
-            Console.WriteLine("-----------");
-            int temp;
-
-            /*
-            // var ref1 = name[0].GetHashCode(); //-2008461520
-            // var ref2 = chars[0].GetHashCode();
-            // Console.WriteLine(ref1);
-            // Console.WriteLine(ref2);
-            //var temp = name[0].GetHashCode();
-            //Console.WriteLine(temp);
-            //var temp2 = chars[0].GetHashCode();
-            //Console.WriteLine(temp2);
-
-            ////ref1 = ref2;
-            //ref2 = temp;
-
-            // Console.WriteLine(ref1);
-            //Console.WriteLine(ref2);
-            //Console.WriteLine(name[0]);
-            //Console.WriteLine(chars[0]);
-            //Console.WriteLine(name.GetHashCode());//-2008461520
-            //Console.WriteLine(ref1);
-            //Console.WriteLine(name[0].GetHashCode());
-
-            Console.WriteLine("----------------------");
-            */
-            for (int i = 0; i < name.Length; i++)
-            {
-            int refNameCodes = name[0].GetHashCode();
-
-            }
-
-            for (int j = 0; j < chars.Length; j++)
-            {
-            int refCharsCodes = chars[0].GetHashCode();
-
-            temp = refNameCodes;
-            refNameCodes = temp;
-            refCharsCodes = temp;
-            }
-            //if ()
-            //{
-
-            //}
-
-            //if (name[i].ToString() == chars[j])
-            //{
-            //    Swip(ref chars[i], ref chars[j]);
-            //    //Console.Write(chars[i]);
-            //    break;
-            //}
-
-
-            //int[] numbers = { 1, 2, 3, 4, 5, 5 };
-            //Dictionary<int, int> sol = new Dictionary<int, int>();
-            //for (int i = 0; i < numbers.Length; i++)
-            //{
-            //    int current = numbers[i];
-
-
-
-            //}
-            //foreach (int count in sol.Values)
-            //{
-            //    Console.WriteLine(count);
-            //}
 
         }
     }
 }
+
