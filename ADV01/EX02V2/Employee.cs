@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADV01.EX02V2
 {
-    internal class Employee
+    internal class Employee : IEquatable<Employee>
 
     {
         public int Id { get; set; }
@@ -39,66 +39,85 @@ namespace ADV01.EX02V2
 
         #endregion
         #region GetHashCode() -- Equals()
-        public override bool Equals(object? _obj)
+        #region Equals(object obj) ==> this is the default Equals (object) can not use the specific type 
+        //public override bool Equals(object? _obj)
+        //{
+        //    #region Unsave Casting -- Explicit casting
+        //    //example of unsafe type casting
+        //    //explicit casting
+        //    /*
+        //    Employee? emp = (Employee?)_obj;// type casting unsafe -- this way can throw Exception use as operator for safe type casting (V4)
+        //    if (emp is not null)
+        //    {
+        //        Console.WriteLine("Employee Are Equal");
+        //        return (this.Id == emp.Id) && (this.Name == emp.Name) && (this.Salary == emp.Salary);
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    } 
+        //    */
+        //    #endregion
+
+        //    #region Is Operator -- Safe Casting
+        //    // example of safe type casting
+        //    // using [ is ] operator to check type before casting and can cast inside (Optional with pattern matching) object to Employee
+        //    /* return  
+
+
+        //    True => if obj is Employee or Type derived (inherit) from Employee 
+        //    ----> [then cast obj to Employee and compare the content Using (Pattern Matching)] Optional
+
+        //    or
+        //    False => if obj is not Employee 
+        //     */
+
+        //    //if (_obj is Employee /*(_emp) is pattern Matching => */ _emp)
+        //    //{
+        //    //    return (this.Id == _emp.Id) && (this.Name == _emp.Name) && (this.Salary == _emp.Salary);
+        //    //}
+        //    //else
+        //    //{
+        //    //    return false;
+        //    //}
+
+
+
+        //    #endregion
+
+
+        //    #region As Operator 
+        //    // example of safe type casting 
+        //    // use [ as ] operator to cast object to Employee if fail return null
+        //    Employee? emp = _obj as Employee; // safe type casting if fail return null
+        //    if (emp is not null)
+        //    {
+        //        return (this.Id == emp.Id) && (this.Name == emp.Name) && (this.Salary == emp.Salary);
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //    #endregion
+        //} 
+        #endregion
+
+        #region IEqatable<T> Impelement the Equals(Employee other) method from IEquatable<T> interface
+        // This method is type safe and avoid boxing unboxing for value types
+        // and improve performance when comparing objects of the same type
+        // Also this method is used in collections and algorithms that require equality comparison
+        // Use Specific Type (Employee) to compare
+        public bool Equals(Employee? _emp)
         {
-            #region Unsave Casting -- Explicit casting
-            //example of unsafe type casting
-            //explicit casting
-            /*
-            Employee? emp = (Employee?)_obj;// type casting unsafe -- this way can throw Exception use as operator for safe type casting (V4)
-            if (emp is not null)
+            if (_emp is not null)
             {
-                Console.WriteLine("Employee Are Equal");
-                return (this.Id == emp.Id) && (this.Name == emp.Name) && (this.Salary == emp.Salary);
-            }
-            else
-            {
-                return false;
-            } 
-            */
-            #endregion
-
-            #region Is Operator -- Safe Casting
-            // example of safe type casting
-            // using [ is ] operator to check type before casting and can cast inside (Optional with pattern matching) object to Employee
-            /* return  
-             
-
-            True => if obj is Employee or Type derived (inherit) from Employee 
-            ----> [then cast obj to Employee and compare the content Using (Pattern Matching)] Optional
-                
-            or
-            False => if obj is not Employee 
-             */
-
-            //if (_obj is Employee /*(_emp) is pattern Matching => */ _emp)
-            //{
-            //    return (this.Id == _emp.Id) && (this.Name == _emp.Name) && (this.Salary == _emp.Salary);
-            //}
-            //else
-            //{
-            //    return false;
-            //}
-
-
-
-            #endregion
-
-
-            #region As Operator 
-            // example of safe type casting 
-            // use [ as ] operator to cast object to Employee if fail return null
-            Employee? emp = _obj as Employee; // safe type casting if fail return null
-            if (emp is not null)
-            {
-                return (this.Id == emp.Id) && (this.Name == emp.Name) && (this.Salary == emp.Salary);
+                return (this.Id == _emp.Id) && (this.Name == _emp.Name) && (this.Salary == _emp.Salary);
             }
             else
             {
                 return false;
             }
-            #endregion
-        }
+        #endregion
         public override int GetHashCode()
         {
             return HashCode.Combine(Id, Name, Salary);

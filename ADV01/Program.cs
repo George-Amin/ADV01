@@ -285,6 +285,15 @@ namespace ADV01
             #endregion
 
 
+
+
+            #endregion
+
+
+
+
+            #region IEquatable<T>
+
             #endregion
 
 

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ADV01.EX02V2
 {
-    internal static class Search<T> /* <T> where T : class */ // Generic Constraint to reference type only make sure T is a class
+    //internal static class Search<T> /* <T> where T : class */ // Generic Constraint to reference type only make sure T is a class
+    internal static class Search<T>  /*where T : IEquatable<T>*/ // Generic Constraint to types that implement IEquatable<T> interface
     {
         public static int SearchValue(T[]? _arr, T _ValueToSearch)
         {
@@ -42,7 +43,7 @@ namespace ADV01.EX02V2
 
                     if (_ValueToSearch.Equals(_arr[i]))
                     {
-                        Console.Write("found : " + _arr[i] + "In Index :");
+                        //Console.Write("found : " + _arr[i] + "In Index :");
                         return i;
                     }
                
