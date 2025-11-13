@@ -13,6 +13,10 @@ namespace ADV01.EX02V2
         public int Id { get; set; }
         public string? Name { get; set; }
         public decimal Salary { get; set; }
+        public Employee()
+        {
+            
+        }
         public Employee(int _id, string? _name, decimal _salary)
         {
             Id = _id;
@@ -117,11 +121,27 @@ namespace ADV01.EX02V2
             {
                 return false;
             }
+        }
         #endregion
         public override int GetHashCode()
         {
             return HashCode.Combine(Id, Name, Salary);
         }
+
+        public override bool Equals(object _emp)
+        {
+            Employee? emp = _emp  as Employee;
+            if (_emp is not null)
+            {
+                return (this.Id == emp.Id) && (this.Name == emp.Name) && (this.Salary == emp.Salary);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
 
         #endregion
     }

@@ -1,4 +1,5 @@
-﻿using ADV01.EX01;
+﻿using ADV01.CustomEqualityComparer;
+using ADV01.EX01;
 using ADV01.EX02V2;
 using System.ComponentModel;
 using System.ComponentModel.Design;
@@ -10,6 +11,18 @@ namespace ADV01
     {
         static void Main(string[] args)
         {
+
+            Employee emp1 = new Employee(1, null, 5000m);
+            Employee emp2 = new Employee(2, "George", 5111m);
+            Employee emp3 = new Employee(1, "Mina", 5000m);
+            Employee emp4 = new Employee(3, "Youssef", 5111m);
+            Employee[] arrOfEmp = new Employee[]
+            {
+                emp1,
+                emp2,
+                emp3,
+                emp4
+            };
             #region EX01 Swip Generic Method
             // int a = 10;
             //int b = 20;
@@ -129,8 +142,6 @@ namespace ADV01
             //Console.WriteLine(i);
             #endregion
 
-
-
             #region V3 Equality And hash Code GetHashCode()
 
             // //---  code for V3 Equality And hash Code GetHashCode() goes here ---//
@@ -144,8 +155,6 @@ namespace ADV01
             //// 
             // Console.WriteLine(Message); // Output: not Equal
             #endregion
-
-
 
             #region Is - As - typeof()
             #region Is Operator
@@ -290,14 +299,27 @@ namespace ADV01
             #endregion
 
 
-
-
             #region IEquatable<T>
+
+            //IEquatable<T> is used to define a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.
+            //Employee empToSearch = new Employee(3, "Youssef", 5111m);
+            //Console.WriteLine(Search<Employee>.SearchValue(arrOfEmp, empToSearch));
 
             #endregion
 
+            #region IEqualtyComparer<T>
+            Employee? searchByName = new Employee()
+            {
+                Name = "George"
+            };
+            int index = 
+            Search<Employee>.SearchValue(arrOfEmp, searchByName,new EmployeeEqualityComparer());
+            Console.WriteLine(index);
+            //Employee empToSearch = new Employee(3, "Youssef", 5111m);         
+            #endregion
 
-        }
+
+        //}
     }
 }
 
