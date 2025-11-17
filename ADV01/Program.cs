@@ -302,24 +302,24 @@ namespace ADV01
             #region IEquatable<T>
 
             //IEquatable<T> is used to define a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.
-            //Employee empToSearch = new Employee(3, "Youssef", 5111m);
+            //Employee empToSearch = new Employee(1, "Mina", 5000m);
             //Console.WriteLine(Search<Employee>.SearchValue(arrOfEmp, empToSearch));
 
             #endregion
 
             #region IEqualtyComparer<T>
-            Employee? searchByName = new Employee()
-            {
-                Name = "George"
-            };
-            int index = 
-            Search<Employee>.SearchValue(arrOfEmp, searchByName,new EmployeeEqualityComparer());
-            Console.WriteLine(index);
+            //Employee? searchByName = new Employee()
+            //{
+            //    Name = "George"
+            //};
+            //int index =
+            //Search<Employee>.SearchValue(arrOfEmp, searchByName, new EmployeeEqualityComparer());
+            //Console.WriteLine(index);
             //Employee empToSearch = new Employee(3, "Youssef", 5111m);         
             #endregion
 
 
-        //}
+        }
     }
 }
 
