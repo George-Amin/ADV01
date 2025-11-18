@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADV01.EX02V2
 {
-    internal class Employee : IEquatable<Employee>
+    internal class Employee : IEquatable<Employee> , IComparable<Employee>
 
     {
         public int Id { get; set; }
@@ -139,6 +139,11 @@ namespace ADV01.EX02V2
             {
                 return false;
             }
+        }
+
+        public int CompareTo(Employee? other)
+        {
+            throw new NotImplementedException();
         }
 
 

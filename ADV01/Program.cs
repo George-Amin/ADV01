@@ -1,6 +1,7 @@
 ﻿using ADV01.CustomEqualityComparer;
 using ADV01.EX01;
 using ADV01.EX02V2;
+using ADV01.EXV02_Generics_Bubble_Sort;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Security.Cryptography;
@@ -18,10 +19,10 @@ namespace ADV01
             Employee emp4 = new Employee(3, "Youssef", 5111m);
             Employee[] arrOfEmp = new Employee[]
             {
+                emp4,
                 emp1,
-                emp2,
                 emp3,
-                emp4
+                emp2,
             };
             #region EX01 Swip Generic Method
             // int a = 10;
@@ -317,10 +318,15 @@ namespace ADV01
             //Console.WriteLine(index);
             //Employee empToSearch = new Employee(3, "Youssef", 5111m);         
             #endregion
-            
+
             #region Bubble Sort 
-
-
+            //int[] nums = { 8, 4, 2, 3, 4, 67 };
+            //BubbleSort.Bubble<int>(nums);
+            //foreach (int i in nums) {
+            //    Console.WriteLine(i);
+            //}
+            foreach (Employee emp in arrOfEmp) { Console.WriteLine(emp); }// not sorted
+            BubbleSort<Employee>.Bubble(arrOfEmp);
             #endregion
 
 
