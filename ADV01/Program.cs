@@ -325,10 +325,12 @@ namespace ADV01
             //foreach (int i in nums) {
             //    Console.WriteLine(i);
             //}
-            foreach (Employee emp in arrOfEmp) { Console.WriteLine(emp); }// not sorted
-            BubbleSort<Employee>.Bubble(arrOfEmp);
+            //foreach (Employee emp in arrOfEmp) { Console.WriteLine(emp); }// not sorted
+            //BubbleSort<Employee>.Bubble(arrOfEmp);
             #endregion
+            #region IComparer<>
 
+            #endregion
 
         }
     }

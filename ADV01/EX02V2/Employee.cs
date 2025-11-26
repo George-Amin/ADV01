@@ -141,9 +141,20 @@ namespace ADV01.EX02V2
             }
         }
 
-        public int CompareTo(Employee? other)
+        public int CompareTo(Employee? employee)
         {
-            throw new NotImplementedException();
+            // CompareTo() => return (left == right) ? 0 : (left < right) ? -1 : +1;
+            // if this.Salary > employee = +1
+            // if this.Salary = employee = 0
+            // if this.Salary < employee = -1
+            if ()
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
 
